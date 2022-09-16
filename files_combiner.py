@@ -26,6 +26,11 @@ destination_folder = parent_folder+'/combined'
 targets = args.get('targets')
 file_types = args.get('file_types')
 
+# Delete combined folder if it exists
+if os.path.isdir(destination_folder):
+    shutil.rmtree(destination_folder)
+
+# create a new combined folder if it does not exist
 if not os.path.isdir(destination_folder):
     os.makedirs(destination_folder)
 
